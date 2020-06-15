@@ -1,7 +1,8 @@
-import { getPoetry } from "../practice3";
 import fetchMock from "fetch-mock";
+import { getPoetry } from "../practice3";
 
 fetchMock.mock("https://v1.jinrishici.com/all.json", {
+
   content: "天清一雁远，海阔孤帆迟。",
   origin: "送张舍人之江东",
   author: "李白",
@@ -10,5 +11,9 @@ fetchMock.mock("https://v1.jinrishici.com/all.json", {
 
 test("properties on kevin and winnie expected", async () => {
   const result = await getPoetry();
-  expect(result).toEqual(['送张舍人之江东', '李白', '天清一雁远，海阔孤帆迟。']);
+  expect(result).toEqual([
+    "送张舍人之江东",
+    "李白",
+    "天清一雁远，海阔孤帆迟。",
+  ]);
 });
